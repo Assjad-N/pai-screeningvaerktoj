@@ -1,0 +1,10 @@
+pandas
+pydantic
+pdfplumber
+pymupdf
+pyyaml
+streamlit
+rapidfuzz
+tqdm
+python-dotenv
+openai

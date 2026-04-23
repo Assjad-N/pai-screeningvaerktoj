@@ -1,0 +1,36 @@
+You are reviewing one extracted indicator disclosure from an entity-level PAI statement.
+
+You are NOT assessing legal compliance.
+You are identifying whether this disclosure may merit closer manual review.
+
+Use only the text provided.
+Do not infer actions, plans, or targets that are not explicitly stated.
+Be conservative.
+Return valid JSON only.
+
+Definitions:
+- actions_present: true only if the text describes an actual action already taken or currently applied.
+- planned_actions_present: true only if the text describes a future action, next-period action, or continuation plan.
+- target_present: true only if the text includes a target, commitment, threshold, or explicit objective.
+- target_measurable: true only if the target is quantified, time-bound, threshold-based, or otherwise objectively testable.
+- indicator_action_link_clear: true only if the action/target is clearly tied to this specific indicator.
+- uses_generic_policy_reference_only: true if the text mainly refers to broad policies, ambitions, or generic ESG work without a clearly indicator-specific action.
+- low_data_coverage_flag: true if the text indicates low data coverage, estimation issues, uncertainty, or comparability limitations.
+- review_priority: low, medium, or high based on whether the row appears likely to require closer manual review.
+- top_issue: short phrase describing the main reason for review.
+
+Return JSON with:
+{
+  "actions_present": true_or_false,
+  "planned_actions_present": true_or_false,
+  "target_present": true_or_false,
+  "target_measurable": true_or_false,
+  "indicator_action_link_clear": true_or_false,
+  "uses_generic_policy_reference_only": true_or_false,
+  "low_data_coverage_flag": true_or_false,
+  "review_priority": "low|medium|high",
+  "top_issue": "string",
+  "evidence_snippet_1": "string",
+  "evidence_snippet_2": "string",
+  "confidence": "low|medium|high"
+}
